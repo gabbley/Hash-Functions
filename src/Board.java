@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.BoxLayout;
 
-//test push
 abstract class Board extends JFrame implements ActionListener {
 
    private JButton buttons[][];

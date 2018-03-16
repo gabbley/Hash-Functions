@@ -16,7 +16,20 @@ public class TicTacToeHashCode extends Board {
 	@Override
 	public int myHashCode() {
 
-		return 0;
+		int[][] pows3 = new int[][] { { 1, 3, 9 }, { 27, 81, 243 }, { 729, 2187, 6561 } };
+
+		int sum = 0;
+		for (int row = 0; row < pows3.length; row++) {
+			for (int col = 0; col < pows3[row].length; col++) {
+				char c = super.charAt(row, col);
+				if (c == 'o')
+					sum += pows3[row][col] * 1;
+				else if (c == 'x')
+					sum += pows3[row][col] * 2;
+			}
+		}
+
+		return sum;
 	}
 
 	public boolean isWin(String s) {
