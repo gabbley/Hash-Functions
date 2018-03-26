@@ -36,20 +36,21 @@ public class TicTacToeHashCode extends Board {
           sum += pows3[row][col] * 2;
       }
     }
-
     return sum;
   }
    
    @Override
     public boolean isWin(String s) {
     // TODO return the value in the winner array for the hash chode of the board string sent in.
-    return true;
+	   super.setBoardString(s);
+	   return winners[myHashCode()];
     }
     
     @Override
     public boolean isWin() {
        // TODO return the value in the winner array for the hash chode of the current board string.
-      return true;
+   //   return isWin(super.getBoardString());
+    	return true;
     }
   
    public static void main(String[] args) throws InterruptedException {

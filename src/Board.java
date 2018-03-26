@@ -22,14 +22,32 @@ abstract class Board extends JFrame implements ActionListener {
       setupFrame();
    }
    
+	/**
+	 * Sets label in GUI to given hashcode
+	 * 
+	 * @param hashcode
+	 *            given int hashcode
+	 */
    public void setHashCodeLabel(int hashcode) {
       lblHashCode.setText("" + hashcode);
    }
    
+	/**
+	 * Sets winner label based on given result
+	 * 
+	 * @param result
+	 *            given result, winner or loser
+	 */
    public void setWinnerLabel(String result) {
       lblWinTitle.setText(result);
    }
    
+	/**
+	 * Determines winner or loser based on given result
+	 * 
+	 * @param result
+	 *            given result, winner or loser
+	 */
    public void setWinnerLabel(boolean result) {
       if (result)
          setWinnerLabel("Winner");
@@ -172,6 +190,12 @@ abstract class Board extends JFrame implements ActionListener {
       return boardString;
    }
 
+	/**
+	 * Sets label in GUI to given hashcode
+	 * 
+	 * @param hashcode
+	 *            given int hashcode
+	 */
    public void displayRandomString() {
       for (int r = 0; r < TicTacToe.ROWS; r++) 
          for (int c = 0; c < TicTacToe.COLS; c++) {
