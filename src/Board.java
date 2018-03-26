@@ -17,19 +17,43 @@ abstract class Board extends JFrame implements ActionListener {
 
 	private String boardString = "";
 
+	/**
+	 * Constructor for Board
+	 * 
+	 * @param title
+	 *            String of title of frame
+	 */
 	public Board(String title) {
 		super(title);
 		setupFrame();
 	}
 
+	/**
+	 * Sets the label that displays the hashcode
+	 * 
+	 * @param hashcode
+	 *            int representation of hashcode
+	 */
 	public void setHashCodeLabel(int hashcode) {
 		lblHashCode.setText("" + hashcode);
 	}
 
+	/**
+	 * Sets the label that displays winner or loser
+	 * 
+	 * @param result
+	 *            String result of game: either Winner or Loser
+	 */
 	public void setWinnerLabel(String result) {
 		lblWinTitle.setText(result);
 	}
 
+	/**
+	 * Determines the label that displays winner or loser
+	 * 
+	 * @param result
+	 *            boolean result of game: either winner or loser
+	 */
 	public void setWinnerLabel(boolean result) {
 		if (result)
 			setWinnerLabel("Winner");
@@ -88,6 +112,12 @@ abstract class Board extends JFrame implements ActionListener {
 		return panel;
 	}
 
+	/**
+	 * Switches ??????????????? 
+	 * 
+	 * @param ch
+	 *            i literally don't know
+	 */
 	private static char cycleValue(char ch) {
 		switch (ch) {
 		case 'x':
@@ -99,6 +129,9 @@ abstract class Board extends JFrame implements ActionListener {
 		}
 	}
 
+	/**
+	 * Sets up GUI for program
+	 */
 	private void setupFrame() {
 		JPanel panel2 = new JPanel();
 
@@ -116,6 +149,13 @@ abstract class Board extends JFrame implements ActionListener {
 		super.setVisible(true);
 	}
 
+
+	/**
+	 * Returns random char for TicTacToe board
+	 * 
+	 * @return char
+	 * 		returns a random TicTacToe char
+	 */
 	private char randomXO() {
 		int rnd = (int) (Math.random() * TicTacToe.CHAR_POSSIBILITIES);
 		switch (rnd) {
@@ -134,6 +174,19 @@ abstract class Board extends JFrame implements ActionListener {
 
 	abstract boolean isWin();
 
+
+	/**
+	 * Returns character at current index in the matrix
+	 * 
+	 * @param row
+	 *            index for the current row
+	 *            
+	 * @param col
+	 *            index for the current column
+	 * 
+	 * @return char
+	 * 			  char at current index in the matrix
+	 */
 	public char charAt(int row, int col) {
 		String value = buttons[row][col].getText();
 		if (value.length() > 0)
@@ -142,6 +195,21 @@ abstract class Board extends JFrame implements ActionListener {
 			return '*';
 	}
    
+	/**
+	 * Returns character at current index in the matrix **SPECIFY THIS
+	 * 
+	 * @param s
+	 * 			  current TicTacToe String on the board
+	 * 
+	 * @param row
+	 *            index for the current row
+	 *            
+	 * @param col
+	 *            index for the current column
+	 *           
+	 * @return char
+	 * 				char at current index in the matrix
+	 */
    public char charAt(String s, int row, int col) {
      int pos = row * TicTacToe.COLS + col;
      if (s.length() >= pos)
@@ -150,6 +218,12 @@ abstract class Board extends JFrame implements ActionListener {
        return '*';   
    }
 
+	/**
+	 * Shows appropriate TicTacToe chars on the buttons
+	 * 
+	 * @param s
+	 *         current TicTacToe String on the board
+	 */
 	public void show(String s) {
 		int pos = 0;
 		String letter;
@@ -174,6 +248,10 @@ abstract class Board extends JFrame implements ActionListener {
 			}
 	}
 
+	
+	/**
+	 * Resets the current boardString
+	 */
 	public void resetBoardString() {
    boardString = "";
 		for (int r = 0; r < TicTacToe.ROWS; r++)
@@ -181,7 +259,13 @@ abstract class Board extends JFrame implements ActionListener {
 				boardString += buttons[r][c].getText();
 			}
 	}
-
+	
+	/**
+	 * Sets the boardString
+	 * 
+	 * @param s
+	 *         boardString to set
+	 */
 	public void setBoardString(String s) {
 		boardString = s;
 		show(s);
