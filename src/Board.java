@@ -271,10 +271,20 @@ abstract class Board extends JFrame implements ActionListener {
 		show(s);
 	}
 
+	/**
+	 * Gets and returns the boardString
+	 * 
+	 * @return String boardString
+	 */
 	public String getBoardString() {
 		return boardString;
 	}
 
+	/**
+	 * Displays a random String
+	 * 
+	 * @return String boardString
+	 */
 	public void displayRandomString() {
 		for (int r = 0; r < TicTacToe.ROWS; r++)
 			for (int c = 0; c < TicTacToe.COLS; c++) {

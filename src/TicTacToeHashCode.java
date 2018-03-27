@@ -32,7 +32,8 @@ public class TicTacToeHashCode extends Board {
 	public boolean isWin(String s) {
       // TODO write an isWin method that takes in a String.  This should not change the board.  Board has an additional charAt 
       // TODO method to facilitate this
-		return false;
+		
+		return winners[myHashCode()];
       }
       
 	@Override
