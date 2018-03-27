@@ -15,6 +15,12 @@ public class TicTacToeHashCode extends Board {
 		// TODO Instantiate winners array
 	}
 
+	/**
+	 * Returns index of ????? lol ????
+	 * 
+	 * @return int
+	 * 		returns index
+	 */
 	@Override
 	public int myHashCode() {
 
